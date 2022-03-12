@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p10_effects</title>
+    <!-- WORK SANS i SYNE TACTILE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            /* float: left; */
+            margin: 10px;
+        }
+
+        #caixa2 {
+            border: 2px;
+            z-index: 15;
+            top: 10vh;
+            left: 30%;
+            margin: auto;
+            display: flex;
+            position: absolute;
+            background-color: purple;
+            color: orangered;
+            width: 50%;
+            height: 50vh;
+
+            /* display: flex;
+    align-items: center; */
+
+        }
+
+        #caixa1 {
+            z-index: 10;
+            margin: auto;
+            display: flex;
+            position: relative;
+            background-color: purple;
+            color: orangered;
+            width: 40%;
+            height: 100vh;
+
+
+            /* display: flex;
+    align-items: center; */
+
+        }
+
+        #fx #fo:hover {
+            background-color: white;
+            color: blue;
+        }
+
+        h2 {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 5em;
+            /*CENTRAR EL TEXT*/
+            justify-content: center;
+            align-items: center;
+            color: chartreuse;
+
+
+        }
+
+        #menu_fade {
+            position: absolute;
+            margin: 40px;
+
+        }
+
+        #menu_slide {
+            position: absolute;
+            margin: 140px 0 0 40px;
+        }
+
+        #menu_slide:hover {
+            box-shadow: 10px;
+        }
+
+        /* ul li{
+    display: inline;
+        list-style-type: none;
+        padding: 20px;
+} */
+        #menu_fade li {
+            display: inline;
+            list-style-type: none;
+            padding: 20px;
+            background-color: orangered;
+            color: chartreuse;
+            font-family: 'Work Sans', sans-serif;
+
+
+        }
+
+        /* ul li:hover{
+        color: blue;
+    } */
+        p {
+            /* padding: 20px; */
+            /* background-color: chartreuse; */
+            color: chartreuse;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 500;
+            margin: 10px;
+            font-size: 1.5em;
+        }
+
+        /* font-family: 'Work Sans', sans-serif; */
+
+        /* } */
+        /* @media (max-width: 1024px){
+    .container{
+    flex-direction: column;
+    }
+    #un,#dos{
+    width: 100%;
+    }
+    } */
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            // $(".container").on(function(){
+            //     $(this).html(<h1>HOLA</h1>);
+            // });
+            $("#fo, #fx").click(function () {
+                $("#caixa1").fadeOut(3000);
+            });
+            $("#fi").click(function () {
+                $("#caixa1").fadeIn();
+            });
+            $("#ft").click(function () {
+                $("#caixa1").fadeToggle();
+            });
+
+
+
+
+            //     $('#un').on('mousedown', function(){
+            //         $('#un p').css('transform','rotate(180deg)');
+            //     });
+
+            //     $('#dos').on('mouseup', function(){
+            //         $('#dos p').css('transform','rotate(180deg)');
+            //     });
+        });
+
+        /*SLIDE*/
+        $(document).ready(function () {
+            // $("#fo, #fx").click(function(){
+            //     $("#caixa1").fadeOut(3000);
+            // });
+            // $("#fi").click(function(){
+            //     $("#caixa1").fadeIn();
+            // });
+            $("#su, #fxs").click(function () {
+                $("#caixa2").slideUp();
+            });
+            $("#sd, #fxs").click(function () {
+                $("#caixa2").slideDown();
+            });
+            $("#st").click(function () {
+                $("#caixa2").slideToggle();
+            });
+
+
+
+
+            //     $('#un').on('mousedown', function(){
+            //         $('#un p').css('transform','rotate(180deg)');
+            //     });
+
+            //     $('#dos').on('mouseup', function(){
+            //         $('#dos p').css('transform','rotate(180deg)');
+            //     });
+        });
+
+    </script>
+</head>
+
+<body>
+    
+    <div class="container">
+        <ul id="menu_fade">
+            <li id="fi">fade in</li>
+            <li id="fo">fade out</li>
+            <li id="ft">fade toggle</li>
+        </ul>
+        <div id="caixa1">
+            <p id="fx">X</p>
+
+            <h2>hola fade</h2>
+        </div>
+        <ul id="menu_slide">
+            <li id="sd">slide down</li>
+            <li id="su">slide up</li>
+            <li id="su">slide toggle</li>
+        </ul>
+        <div id="caixa2">
+            <p id="fx">X</p>
+
+            <h2>hola slide</h2>
+        </div>
+    </div>
+    <!-- <div class="container">
+    <button id="fi">fade In</button>
+        <div id="caixa1">
+            <p id="fo">X</p>
+
+            <h2>hola</h2>
+        </div>
+    </div> -->
+</body>
+
+</html>
